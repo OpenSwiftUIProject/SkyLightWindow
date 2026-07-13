@@ -136,19 +136,31 @@ APIs can change between system updates.
 
 ## Example
 
+The examples require Xcode 26.4 or newer and Tuist 4.203.1 or newer. This
+repository pins Tuist 4.203.1 in `mise.toml`. Install the pinned version with
+[Mise](https://mise.jdx.dev/):
+
 ```bash
-cd Example
-open MoveToSky.xcworkspace
+mise install
 ```
 
-The `Example` directory contains two Xcode projects that share the same example
-sources:
+Generate the default SwiftUI example:
 
-- `MoveToSky.xcodeproj` uses the default SwiftUI integration.
-- `MoveToSkyOpenSwiftUI.xcodeproj` enables the `OpenSwiftUI` trait and requires
-  Xcode 26.4 or newer.
+```bash
+mise exec -- tuist generate --path Example/Projects/MoveToSky --no-open
+open Example/Projects/MoveToSky/MoveToSky.xcworkspace
+```
 
-Open the project for the integration you want to test.
+Generate the OpenSwiftUI example:
+
+```bash
+mise exec -- tuist generate --path Example/Projects/MoveToSkyOpenSwiftUI --no-open
+open Example/Projects/MoveToSkyOpenSwiftUI/MoveToSkyOpenSwiftUI.xcworkspace
+```
+
+Generate the examples separately. Package trait selections belong to an Xcode
+project, and combining both projects in one workspace would give the shared
+`SkyLightWindow` package conflicting trait selections.
 
 ## License
 
