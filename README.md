@@ -136,19 +136,26 @@ APIs can change between system updates.
 
 ## Example
 
+The examples are generated with Tuist and require Xcode 26.4 or newer plus a
+Tuist version containing [native package trait support](https://github.com/tuist/tuist/pull/11799).
+
+Generate the default SwiftUI example:
+
 ```bash
-cd Example
-open MoveToSky.xcworkspace
+tuist generate --path Example/Projects/MoveToSky --no-open
+open Example/Projects/MoveToSky/MoveToSky.xcworkspace
 ```
 
-The `Example` directory contains two Xcode projects that share the same example
-sources:
+Generate the OpenSwiftUI example:
 
-- `MoveToSky.xcodeproj` uses the default SwiftUI integration.
-- `MoveToSkyOpenSwiftUI.xcodeproj` enables the `OpenSwiftUI` trait and requires
-  Xcode 26.4 or newer.
+```bash
+tuist generate --path Example/Projects/MoveToSkyOpenSwiftUI --no-open
+open Example/Projects/MoveToSkyOpenSwiftUI/MoveToSkyOpenSwiftUI.xcworkspace
+```
 
-Open the project for the integration you want to test.
+Generate the examples separately. Package trait selections belong to an Xcode
+project, and combining both projects in one workspace would give the shared
+`SkyLightWindow` package conflicting trait selections.
 
 ## License
 
