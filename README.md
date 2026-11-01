@@ -44,19 +44,19 @@ time of writing, OpenSwiftUI's macOS binary support requires macOS 15.0 or newer
 
 In Xcode, add the package dependency and enable the `OpenSwiftUI` trait in the package settings.
 
-To enable trait in your Xcode project, Xcode 26.4+ is required.
+The `OpenSwiftUI` integration requires Xcode 26.6 or newer.
 
 ![OpenSwiftUI trait](./Resources/OpenSwiftUI-trait.png)
 
 Platform compatibility for default trait:
 
-- macOS 11.0+
-- Swift Compiler 5.9+
+- macOS 12.0+
+- Swift Compiler 6.3+
 
 Platform compatibility for `OpenSwiftUI` trait:
 
 - macOS 15.0+
-- Swift Compiler 6.1+
+- Swift Compiler 6.3.3+
 
 ## Usage
 
@@ -131,13 +131,13 @@ The framework handles:
 ⚠️ **Privacy & Security**: This framework uses private APIs but works without special entitlements and is available to the Mac App Store.
 
 ⚠️ **System Compatibility**: The default SwiftUI integration supports macOS
-11.0 or newer. The `OpenSwiftUI` trait requires macOS 15.0 or newer. Private
+12.0 or newer. The `OpenSwiftUI` trait requires macOS 15.0 or newer. Private
 APIs can change between system updates.
 
 ## Example
 
-The examples require Xcode 26.4 or newer and Tuist 4.203.1 or newer. This
-repository pins Tuist 4.203.1 in `mise.toml`. Install the pinned version with
+The examples require Xcode 26.6 or newer and Tuist 4.214.1 or newer. This
+repository pins Tuist 4.214.1 in `mise.toml`. Install the pinned version with
 [Mise](https://mise.jdx.dev/):
 
 ```bash
